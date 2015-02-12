@@ -74,6 +74,12 @@ var Config = function(configPath){
     }
     return false;
   };
+  this.getPeerPublicKey = function(dns){
+    if(config.peersDNS[dns]){
+      return config.peersDNS[dns];
+    }
+    return false;
+  };
   this.remove = function(dns){
     delete config.announced[dns];
     delete config.peersDNS[dns];
